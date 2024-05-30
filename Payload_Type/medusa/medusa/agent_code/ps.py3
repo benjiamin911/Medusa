@@ -145,7 +145,7 @@
             def normalise_binpath(path):
                 match = re.match(r'(^\\Device\\[a-zA-Z0-9]+)(\\.*)?$', path)
                 if not match:
-                    return f"Cannot convert {path} into a Win32 compatible path"
+                    return "Cannot convert "+path+" into a Win32 compatible path"
                 if not match.group(1) in mappings:
                     return None
                 drive = mappings[match.group(1)]
